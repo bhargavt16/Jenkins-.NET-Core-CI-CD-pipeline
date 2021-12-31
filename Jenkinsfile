@@ -31,7 +31,7 @@ pipeline {
         }
         stage('Deploy'){
              steps{
-               sh '''for pid in $(lsof -t -i:9090); do
+               sh '''for pid in $(lsof -t -i:8082); do
                        kill -9 $pid
                done'''
                sh 'cd WebApplication/bin/Release/netcoreapp3.1/publish/'
